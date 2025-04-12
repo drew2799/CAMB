@@ -199,6 +199,7 @@ class CAMBparams(F2003Class):
         ("max_l_tensor", c_int, "l_max for the tensor C_L"),
         ("max_eta_k", c_double, "Maximum k*eta_0 for scalar C_L, where eta_0 is the conformal time today"),
         ("max_eta_k_tensor", c_double, "Maximum k*eta_0 for tensor C_L, where eta_0 is the conformal time today"),
+        ("gamma_b", c_double, "growth baryon fraction"),
         ("ombh2", c_double, "Omega_baryon h^2"),
         ("omch2", c_double, "Omega_cdm h^2"),
         ("omk", c_double, "Omega_K"),
