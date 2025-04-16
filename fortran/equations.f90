@@ -2212,7 +2212,7 @@
         grhob_t=frac_b*State%grhob/a
         grhoc_t=frac_c*State%grhoc/a
     else
-        write(*,*) "ERROR: gamma_b must be 99. for normal CAMB usage or within [0, 1] for gamma_b_CAMB usage, but got:", fb
+        write(0,*) "ERROR: gamma_b must be 99.0 for normal CAMB usage or within [0, 1] for gamma_b_CAMB usage, but got:", fb
         stop 1
     end if
     grhor_t=State%grhornomass/a2
