@@ -2205,12 +2205,15 @@
     frac_b=fb/fid_fb
     frac_c=(1-fb)/(1-fid_fb)
 
-    if (fb > 1._dl) then
+    if (fb == 99._dl) then
         grhob_t=State%grhob/a
         grhoc_t=State%grhoc/a
-    else
+    else if (fb >= 0._dl .and. fb <= 1._dl) then
         grhob_t=frac_b*State%grhob/a
         grhoc_t=frac_c*State%grhoc/a
+    else
+        write(*,*) "ERROR: gamma_b must be 99. for normal CAMB usage or within [0, 1] for gamma_b_CAMB usage, but got:", fb
+        stop 1
     end if
     grhor_t=State%grhornomass/a2
     grhog_t=State%grhog/a2
